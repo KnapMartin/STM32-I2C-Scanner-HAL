@@ -16,7 +16,7 @@ void I2C_Scanner(I2C_HandleTypeDef *hi2c)
 
     for (i2c_address = 0x03; i2c_address <= 0x77; i2c_address++) {
         // Send a test command to the current address
-        result = HAL_I2C_IsDeviceReady(hi2c3, (i2c_address << 1), 1, 10);
+        result = HAL_I2C_IsDeviceReady(hi2c, (i2c_address << 1), 1, 10);
 
         if (result == HAL_OK) {
             // Device responded
